@@ -46,10 +46,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓更新処理ここから
 		///
-	
+
 		switch (sceneNumber) {
 		case TITLE:
-			if (keys[DIK_RETURN]&&preKeys[DIK_RETURN]==0) {
+			if (keys[DIK_RETURN] && preKeys[DIK_RETURN] == 0) {
 				sceneNumber = PLAY;
 			}
 			break;
@@ -57,7 +57,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		case PLAY:
 			if (keys[DIK_T] && preKeys[DIK_T] == 0) {
-				sceneNumber =TITLE;
+				sceneNumber = TITLE;
 			}
 			player->Update(keys, preKeys);
 			enemy->Update();
@@ -77,16 +77,16 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 					}
 				}
 			}
-			
+
 			//敵とプレイヤーの弾の当たり判定
 			for (int i = 0; i < 256; i++) {
 				if (player->bullet_.pBullet[i].leftT.x < enemyRightB.x && enemyLeftT.x < player->bullet_.pBullet[i].rightB.x) {
 					if (player->bullet_.pBullet[i].leftT.y < enemyRightB.y && enemyLeftT.y < player->bullet_.pBullet[i].rightB.y) {
 						enemy->SetFlag(false);
-					
+
 					}
 				}
-				
+
 			}
 			break;
 		}
@@ -98,7 +98,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↓描画処理ここから
 		///
 		switch (sceneNumber) {
-		case TITLE: 
+		case TITLE:
 			Novice::DrawSprite(0, 0, titleTx, 1, 1, 0.0f, WHITE);
 			break;
 
