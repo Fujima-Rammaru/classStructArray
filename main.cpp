@@ -3,7 +3,7 @@
 #include"Bullet.h"
 #include"Enemy.h"
 
-const char kWindowTitle[] = "GC1C_13_フジマ_ランマル_タイトル";
+const char kWindowTitle[] = "GC1C_13_フジマ_ランマル_STG";
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
